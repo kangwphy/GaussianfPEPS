@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH -p fat6326
+#SBATCH --job-name=1DFdVar
+#SBATCH -c 32
+#SBATCH --exclude=fat632610
+# module load julia
+# N=$1
+
+# srun python optimFd.py
+# srun python sub.py > logs/1DEnVar 2>&1 &
+# optimizer=Nelder-Mead
+#Powell
+#COBYLA
+start_order=$1
+optimizer=Powell
+approach=Ration
+model=1D
+type=energy
+srun python main.py --approach ${approach} --model ${model} --error_type ${type} --optimizer ${optimizer} --start_order ${start_order} > logs/${model}${type}_${approach}_${optimizer}_${start_order}_right 2>&1 &
+wait
