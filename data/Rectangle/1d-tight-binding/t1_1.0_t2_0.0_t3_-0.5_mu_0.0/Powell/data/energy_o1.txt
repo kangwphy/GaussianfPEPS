@@ -1,0 +1,7 @@
+1D Tight-Binding Variational Ansatz (Powell)
+Results for energy, order=1
+Params: t1=1.0, t2=0.0, t3=-0.5, mu=0.0
+=========================
+Orders u=1, v=1: Error = 0.01801566934605234801547446465975
+Orders u=2, v=2: Error = 0.00213962939011640889200305259976
+Orders u=3, v=3: Error = 0.00037779008720140302632350959300

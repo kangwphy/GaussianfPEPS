@@ -1,20 +1,78 @@
 #!/bin/bash
-#SBATCH -p fat6326
-#SBATCH --job-name=1DFdVar
-#SBATCH -c 32
-#SBATCH --exclude=fat632610
-# module load julia
-# N=$1
+# ===================================================================
+#                       USER PARAMETERS
+# ===================================================================
+# --- 1. Model and Physics Parameters ---
+# TASK="AnnularSector"
+# TASK="Rectangle"
+# TASK=half
+MODEL="1D"         # '1D' or '2D'
+TYPE="energy"      # 'energy' or 'fidelity'
+T1=1.0
+T2=0.0
+T3=-0.5
+MU=0.0
 
-# srun python optimFd.py
-# srun python sub.py > logs/1DEnVar 2>&1 &
-# optimizer=Nelder-Mead
-#Powell
-#COBYLA
-start_order=$1
-optimizer=Powell
-approach=Ration
-model=1D
-type=energy
-srun python main.py --approach ${approach} --model ${model} --error_type ${type} --optimizer ${optimizer} --start_order ${start_order} > logs/${model}${type}_${approach}_${optimizer}_${start_order}_right 2>&1 &
-wait
+# --- 2. Approach and Optimizer ---
+APPROACH="Variation"   # 'Ration' or 'Variation'
+OPTIMIZER="Powell"   # 'Nelder-Mead', 'Powell', 'L-BFGS-B', 'SLSQP', 'COBYLA'
+
+# --- 3. Order Parameter ---
+if [ -z "$1" ]; then
+  echo "No start_order provided via \$1. Defaulting to 1."
+  START_ORDER=1
+else
+  START_ORDER=$1
+  echo "Using start_order = $1"
+fi
+
+if [ -z "$2" ]; then
+  echo "No start_order provided via \$1. Defaulting to 1."
+  TASK="Rectangle"
+else
+  TASK=$2
+  echo "Using start_order = $2"
+fi
+# ===================================================================
+
+# --- 4. Dynamic Job Name ---
+SHORT_APPROACH=$( [ "$APPROACH" = "Variation" ] && echo "Var" || echo "Rat" )
+JOB_NAME="${MODEL}-${SHORT_APPROACH}-${OPTIMIZER:0:3}-${START_ORDER}"
+# SBATCH --job-name=${JOB_NAME} 
+
+
+# --- 5. Dynamic Log File ---
+LOG_DIR="logs/${TASK}"
+mkdir -p ${LOG_DIR}
+
+# 创建一个包含所有参数的详细日志文件名
+PARAM_STR="t1_${T1}_t2_${T2}_t3_${T3}_mu_${MU}"
+LOG_FILE="${LOG_DIR}/${MODEL}_${TYPE}_${APPROACH}_${OPTIMIZER}_o${START_ORDER}_${PARAM_STR}.log"
+
+
+# --- 6. Execute the Job ---
+echo "=============================================="
+echo "Starting job:   ${JOB_NAME}"
+echo "Model:          ${MODEL}, t1=${T1}, t2=${T2}, t3=${T3}, mu=${MU}"
+echo "Approach:       ${APPROACH}, Optimizer: ${OPTIMIZER}"
+echo "Order:          ${START_ORDER}"
+echo "Logging to:     ${LOG_FILE}"
+echo "=============================================="
+
+# 运行 Python 脚本，并手动重定向标准输出(>)和标准错误(2>&1)
+# 这将把 Python 脚本的所有 print 和 error 输出都定向到 ${LOG_FILE}
+python -u code/main.py \
+  --task ${TASK}\
+  --model ${MODEL} \
+  --error_type ${TYPE} \
+  --t1 ${T1} \
+  --t2 ${T2} \
+  --t3 ${T3} \
+  --mu ${MU} \
+  --approach ${APPROACH} \
+  --optimizer ${OPTIMIZER} \
+  --start_order ${START_ORDER} > ${LOG_FILE} 2>&1
+
+echo "=============================================="
+echo "Job ${JOB_NAME} finished. Check ${LOG_FILE}"
+echo "=============================================="

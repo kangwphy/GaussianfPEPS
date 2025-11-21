@@ -1,0 +1,151 @@
+self.absEmax 2.0
+Running Model: 1D Tight-Binding with t1=1.0, t2=0.0, t3=-0.5, mu=0.0, domain=Rectangle
+Using optimizer: Powell
+Saving all outputs to: data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/Powell
+--- Running Variational Ansatz for 1D Tight-Binding (Optimizer: Powell, Initial Guess: rational) ---
+
+--- Optimizing energy for orders u:1, v:1 ---
+Generating initial guess from Rational Approximation...
+Calculating cost of initial guess...
+Initial guess cost: 0.02755873
+Starting Powell optimization...
+asdd
+  Iter: 1, Current Cost: 2.067343e-02
+asdd
+  Iter: 2, Current Cost: 1.864737e-02
+asdd
+  Iter: 3, Current Cost: 1.801568e-02
+asdd
+  Iter: 4, Current Cost: 1.801567e-02
+asdd
+  Iter: 5, Current Cost: 1.801567e-02
+Optimization terminated successfully.
+         Current function value: 0.056598
+         Iterations: 5
+         Function evaluations: 273
+0.018015669346052348
+Comparison plot saved to: data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/Powell/fig/1d tight-binding_variational_energy_comparison_u1v1_mu0.0.png
+
+--- Optimizing energy for orders u:2, v:2 ---
+Generating initial guess from Rational Approximation...
+Calculating cost of initial guess...
+Initial guess cost: 0.00337377
+Starting Powell optimization...
+asdd
+  Iter: 1, Current Cost: 3.126852e-03
+asdd
+  Iter: 2, Current Cost: 2.931132e-03
+asdd
+  Iter: 3, Current Cost: 2.840196e-03
+asdd
+  Iter: 4, Current Cost: 2.326217e-03
+asdd
+  Iter: 5, Current Cost: 2.317807e-03
+asdd
+  Iter: 6, Current Cost: 2.316700e-03
+asdd
+  Iter: 7, Current Cost: 2.316312e-03
+asdd
+  Iter: 8, Current Cost: 2.233854e-03
+asdd
+  Iter: 9, Current Cost: 2.201162e-03
+asdd
+  Iter: 10, Current Cost: 2.139784e-03
+asdd
+  Iter: 11, Current Cost: 2.139639e-03
+asdd
+  Iter: 12, Current Cost: 2.139632e-03
+asdd
+  Iter: 13, Current Cost: 2.139630e-03
+asdd
+  Iter: 14, Current Cost: 2.139629e-03
+Optimization terminated successfully.
+         Current function value: 0.006722
+         Iterations: 14
+         Function evaluations: 1049
+0.002139629390116409
+Comparison plot saved to: data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/Powell/fig/1d tight-binding_variational_energy_comparison_u2v2_mu0.0.png
+
+--- Optimizing energy for orders u:3, v:3 ---
+Generating initial guess from Rational Approximation...
+Calculating cost of initial guess...
+Initial guess cost: 0.00087330
+Starting Powell optimization...
+asdd
+  Iter: 1, Current Cost: 7.939868e-04
+asdd
+  Iter: 2, Current Cost: 7.827869e-04
+asdd
+  Iter: 3, Current Cost: 7.768374e-04
+asdd
+  Iter: 4, Current Cost: 6.082227e-04
+asdd
+  Iter: 5, Current Cost: 5.884768e-04
+asdd
+  Iter: 6, Current Cost: 5.247037e-04
+asdd
+  Iter: 7, Current Cost: 4.908072e-04
+asdd
+  Iter: 8, Current Cost: 4.793611e-04
+asdd
+  Iter: 9, Current Cost: 4.735030e-04
+asdd
+  Iter: 10, Current Cost: 4.700050e-04
+asdd
+  Iter: 11, Current Cost: 4.677550e-04
+asdd
+  Iter: 12, Current Cost: 4.636903e-04
+asdd
+  Iter: 13, Current Cost: 4.592774e-04
+asdd
+  Iter: 14, Current Cost: 4.582483e-04
+asdd
+  Iter: 15, Current Cost: 4.567268e-04
+asdd
+  Iter: 16, Current Cost: 4.563658e-04
+asdd
+  Iter: 17, Current Cost: 4.274429e-04
+asdd
+  Iter: 18, Current Cost: 4.249676e-04
+asdd
+  Iter: 19, Current Cost: 4.244123e-04
+asdd
+  Iter: 20, Current Cost: 4.243927e-04
+asdd
+  Iter: 21, Current Cost: 4.233755e-04
+asdd
+  Iter: 22, Current Cost: 4.208424e-04
+asdd
+  Iter: 23, Current Cost: 4.071962e-04
+asdd
+  Iter: 24, Current Cost: 3.975162e-04
+asdd
+  Iter: 25, Current Cost: 3.937490e-04
+asdd
+  Iter: 26, Current Cost: 3.783995e-04
+asdd
+  Iter: 27, Current Cost: 3.779667e-04
+asdd
+  Iter: 28, Current Cost: 3.777906e-04
+asdd
+  Iter: 29, Current Cost: 3.777901e-04
+asdd
+  Iter: 30, Current Cost: 3.777901e-04
+asdd
+  Iter: 31, Current Cost: 3.777901e-04
+Optimization terminated successfully.
+         Current function value: 0.001187
+         Iterations: 31
+         Function evaluations: 2870
+0.000377790087201403
+Comparison plot saved to: data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/Powell/fig/1d tight-binding_variational_energy_comparison_u3v3_mu0.0.png
+Results successfully saved to 'data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/Powell/data/energy_o1.txt'
+Processing results for: 1D Tight-Binding Variational Ansatz (Powell)
+Results for energy, order=1
+Params: t1=1.0, t2=0.0, t3=-0.5, mu=0.0
+Results successfully saved to 'data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/Powell/data/energy_o1.csv' in CSV format.
+
+==================================================
+Run complete for: data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/Powell
+Total Elapsed Time: 29.5123 s
+==================================================

@@ -1,0 +1,21 @@
+self.absEmax 2.0
+Running Model: 1D Tight-Binding with t1=1.0, t2=0.0, t3=-0.5, mu=0.0, domain=Rectangle
+Using optimizer: Powell
+Saving all outputs to: data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/RationalApproximation
+--- Running Rational Approximation for 1D Tight-Binding model ---
+--- Processing order n = 1 ---
+Order 1: Normalized Error = 2.755873e-02
+--- Processing order n = 2 ---
+Order 2: Normalized Error = 3.373772e-03
+--- Processing order n = 3 ---
+Order 3: Normalized Error = 8.732981e-04
+Results successfully saved to 'data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/RationalApproximation/data/energy.txt'
+Processing results for: 1D Tight-Binding Rational Approximation (Powell)
+Results for energy, order=1
+Params: t1=1.0, t2=0.0, t3=-0.5, mu=0.0
+Results successfully saved to 'data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/RationalApproximation/data/energy.csv' in CSV format.
+
+==================================================
+Run complete for: data/Rectangle/1d-tight-binding/t1_1.0_t2_0.0_t3_-0.5_mu_0.0/RationalApproximation
+Total Elapsed Time: 2.6503 s
+==================================================
