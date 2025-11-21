@@ -2,10 +2,11 @@
 Gaussian fPEPS package for rational approximation and variational ansatz calculations.
 """
 
-from .models import BaseModel, Model1D, Model2D
-from .rational import xi, p, g, RationalApproximationApproach
-from .variational import VariationalAnsatzApproach
-from .utils import IntegrationManager, save_results_to_txt, save_results_to_dataframe, \
+# 使用绝对导入以支持独立运行和移植
+from models import BaseModel, Model1D, Model2D
+from rational import xi, p, g, RationalApproximationApproach
+from variational import VariationalAnsatzApproach
+from utils import IntegrationManager, save_results_to_txt, save_results_to_dataframe, \
                   plot_rational_approx_error_scaling, plot_variational_error_scaling, \
                   plot_wavefunction_comparison
 

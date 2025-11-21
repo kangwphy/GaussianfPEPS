@@ -1,7 +1,7 @@
 import numpy as np
 import numpy.polynomial.polynomial as P
 from scipy.optimize import minimize
-from .rational import xi
+from rational import xi
 
 
 class VariationalAnsatzApproach:
@@ -117,7 +117,7 @@ class VariationalAnsatzApproach:
 
             # Plot comparison for each completed order
             rational_coeffs = self._get_rational_coeffs(model, mu_val, n_guess, order_u, order_v)
-            from .utils import plot_wavefunction_comparison
+            from utils import plot_wavefunction_comparison
             plot_wavefunction_comparison(result_data, rational_coeffs, model, mu_val, error_type, figs_dir=figs_dir)
 
         return results

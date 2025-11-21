@@ -1,6 +1,0 @@
-usage: main.py [-h] [--model {1D,2D}] [--error_type {energy,fidelity}]
-               [--t1 T1] [--t2 T2] [--t3 T3] [--mu MU] [--task TASK]
-               [--optimizer {Nelder-Mead,L-BFGS-B,SLSQP,COBYLA,Powell}]
-               [--approach {Ration,Variation}] [--start_order START_ORDER]
-               [--max_orders MAX_ORDERS]
-main.py: error: argument --optimizer: invalid choice: 'Variation' (choose from Nelder-Mead, L-BFGS-B, SLSQP, COBYLA, Powell)

@@ -71,7 +71,8 @@ python -u code/main.py \
   --mu ${MU} \
   --approach ${APPROACH} \
   --optimizer ${OPTIMIZER} \
-  --start_order ${START_ORDER} > ${LOG_FILE} 2>&1
+  --start_order ${START_ORDER} \
+  --max_orders 5 > ${LOG_FILE} 2>&1
 
 echo "=============================================="
 echo "Job ${JOB_NAME} finished. Check ${LOG_FILE}"

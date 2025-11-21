@@ -1,0 +1,6 @@
+1D Tight-Binding Rational Approximation (Nelder-Mead)
+Results for energy, order=1
+Params: t1=1.0, t2=0.0, t3=0.0, mu=0.0
+=========================
+Order 1: 0.02755872670291846515677747220252
+Order 2: 0.00337377209882290052603281971244

@@ -18,13 +18,18 @@ import argparse
 import time
 import numpy as np
 
-# Add the parent directory to path to enable imports when running from gitsyn directory
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if parent_dir not in sys.path:
-    sys.path.insert(0, parent_dir)
+# Add current directory to path to enable imports when running from code directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
 
-# Import all required functionality from the reorganized sub module
-from gitsyn.sub import *
+# Import all required functionality from local modules
+from models import BaseModel, Model1D, Model2D
+from rational import xi, p, g, RationalApproximationApproach
+from variational import VariationalAnsatzApproach
+from utils import IntegrationManager, save_results_to_txt, save_results_to_dataframe, \
+              plot_rational_approx_error_scaling, plot_variational_error_scaling, \
+              plot_wavefunction_comparison
 
 def setup_directories(model_name, task, params, approach, optimizer_name, start_order):
     """
